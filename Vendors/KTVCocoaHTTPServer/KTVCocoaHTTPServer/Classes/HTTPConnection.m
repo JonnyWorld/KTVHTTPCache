@@ -9,7 +9,7 @@
 #import "DDData.h"
 #import "HTTPFileResponse.h"
 #import "HTTPAsyncFileResponse.h"
-#import "WebSocket.h"
+#import "CocoaWebSocket.h"
 #import "HTTPLogging.h"
 
 #if ! __has_feature(objc_arc)
@@ -915,11 +915,11 @@ static NSMutableArray *recentNonces;
 	NSString *uri = [self requestURI];
 	
 	// Check for WebSocket request
-	if ([WebSocket isWebSocketRequest:request])
+	if ([CocoaWebSocket isWebSocketRequest:request])
 	{
 		HTTPLogVerbose(@"isWebSocket");
 		
-		WebSocket *ws = [self webSocketForURI:uri];
+        CocoaWebSocket *ws = [self webSocketForURI:uri];
 		
 		if (ws == nil)
 		{
@@ -1684,7 +1684,7 @@ static NSMutableArray *recentNonces;
 	return nil;
 }
 
-- (WebSocket *)webSocketForURI:(NSString *)path
+- (CocoaWebSocket *)webSocketForURI:(NSString *)path
 {
 	HTTPLogTrace();
 	

@@ -1,4 +1,4 @@
-#import "WebSocket.h"
+#import "CocoaWebSocket.h"
 #import "HTTPMessage.h"
 #import "GCDAsyncSocket.h"
 #import "DDNumber.h"
@@ -51,7 +51,7 @@ static inline NSUInteger WS_PAYLOAD_LENGTH(UInt8 frame)
 	return frame & 0x7F;
 }
 
-@interface WebSocket (PrivateAPI)
+@interface CocoaWebSocket (PrivateAPI)
 
 - (void)readRequestBody;
 - (void)sendResponseBody;
@@ -63,7 +63,7 @@ static inline NSUInteger WS_PAYLOAD_LENGTH(UInt8 frame)
 #pragma mark -
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-@implementation WebSocket
+@implementation CocoaWebSocket
 {
 	BOOL isRFC6455;
 	BOOL nextFrameMasked;

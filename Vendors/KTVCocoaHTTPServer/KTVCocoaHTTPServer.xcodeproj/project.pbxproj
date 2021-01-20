@@ -43,8 +43,8 @@
 		9C1F0EB220AFBBC600FCC0B2 /* HTTPFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1F0E8D20AFBBC600FCC0B2 /* HTTPFileResponse.m */; };
 		9C1F0EB320AFBBC600FCC0B2 /* HTTPRedirectResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C1F0E8E20AFBBC600FCC0B2 /* HTTPRedirectResponse.h */; };
 		9C1F0EB420AFBBC600FCC0B2 /* HTTPRedirectResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1F0E8F20AFBBC600FCC0B2 /* HTTPRedirectResponse.m */; };
-		9C1F0EB520AFBBC600FCC0B2 /* WebSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C1F0E9020AFBBC600FCC0B2 /* WebSocket.h */; };
-		9C1F0EB620AFBBC600FCC0B2 /* WebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1F0E9120AFBBC600FCC0B2 /* WebSocket.m */; };
+		9C1F0EB520AFBBC600FCC0B2 /* CocoaWebSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C1F0E9020AFBBC600FCC0B2 /* CocoaWebSocket.h */; };
+		9C1F0EB620AFBBC600FCC0B2 /* CocoaWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1F0E9120AFBBC600FCC0B2 /* CocoaWebSocket.m */; };
 		9CACF7F720AFBCF000A72CB6 /* GCDAsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CACF7F520AFBCF000A72CB6 /* GCDAsyncSocket.h */; };
 		9CACF7F820AFBCF000A72CB6 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CACF7F620AFBCF000A72CB6 /* GCDAsyncSocket.m */; };
 /* End PBXBuildFile section */
@@ -88,8 +88,8 @@
 		9C1F0E8D20AFBBC600FCC0B2 /* HTTPFileResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPFileResponse.m; sourceTree = "<group>"; };
 		9C1F0E8E20AFBBC600FCC0B2 /* HTTPRedirectResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPRedirectResponse.h; sourceTree = "<group>"; };
 		9C1F0E8F20AFBBC600FCC0B2 /* HTTPRedirectResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPRedirectResponse.m; sourceTree = "<group>"; };
-		9C1F0E9020AFBBC600FCC0B2 /* WebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSocket.h; sourceTree = "<group>"; };
-		9C1F0E9120AFBBC600FCC0B2 /* WebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebSocket.m; sourceTree = "<group>"; };
+		9C1F0E9020AFBBC600FCC0B2 /* CocoaWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaWebSocket.h; sourceTree = "<group>"; };
+		9C1F0E9120AFBBC600FCC0B2 /* CocoaWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocoaWebSocket.m; sourceTree = "<group>"; };
 		9CACF7F520AFBCF000A72CB6 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
 		9CACF7F620AFBCF000A72CB6 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,8 +149,8 @@
 				9C1F0E7B20AFBBC600FCC0B2 /* HTTPServer.m */,
 				9C1F0E7C20AFBBC600FCC0B2 /* Mime */,
 				9C1F0E8320AFBBC600FCC0B2 /* Responses */,
-				9C1F0E9020AFBBC600FCC0B2 /* WebSocket.h */,
-				9C1F0E9120AFBBC600FCC0B2 /* WebSocket.m */,
+				9C1F0E9020AFBBC600FCC0B2 /* CocoaWebSocket.h */,
+				9C1F0E9120AFBBC600FCC0B2 /* CocoaWebSocket.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -242,7 +242,7 @@
 				9C1F0E9420AFBBC600FCC0B2 /* DDNumber.h in Headers */,
 				9C1F0E6320AFBB1D00FCC0B2 /* KTVCocoaHTTPServer.h in Headers */,
 				9C1F0E9C20AFBBC600FCC0B2 /* HTTPLogging.h in Headers */,
-				9C1F0EB520AFBBC600FCC0B2 /* WebSocket.h in Headers */,
+				9C1F0EB520AFBBC600FCC0B2 /* CocoaWebSocket.h in Headers */,
 				9C1F0EAF20AFBBC600FCC0B2 /* HTTPErrorResponse.h in Headers */,
 				9C1F0EAB20AFBBC600FCC0B2 /* HTTPDataResponse.h in Headers */,
 			);
@@ -334,7 +334,7 @@
 				9C1F0EAE20AFBBC600FCC0B2 /* HTTPDynamicFileResponse.m in Sources */,
 				9C1F0EAA20AFBBC600FCC0B2 /* HTTPAsyncFileResponse.m in Sources */,
 				9CACF7F820AFBCF000A72CB6 /* GCDAsyncSocket.m in Sources */,
-				9C1F0EB620AFBBC600FCC0B2 /* WebSocket.m in Sources */,
+				9C1F0EB620AFBBC600FCC0B2 /* CocoaWebSocket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
